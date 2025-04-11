@@ -1,10 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+
 
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
@@ -13,7 +11,7 @@ module.exports = {
 		filename: '[name].[contenthash].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
-		assetModuleFilename: 'images/[name].[hash][ext][query]'
+		assetModuleFilename: 'assets/[name].[hash][ext][query]'
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -61,19 +59,5 @@ module.exports = {
 			},
 		]
 	},
-	optimization: {
-		minimizer: [
-			new CssMinimizerPlugin(),
-			new TerserPlugin(),
-			new ImageMinimizerPlugin({
-				minimizer: {
-					implementation: ImageMinimizerPlugin.imageminMinify,
-					options: {
-						plugins: [['mozjpeg', { quality: 70 }]]
-					}
-				}
-			})
-		],
-		minimize: true
-	}
+	
 };
