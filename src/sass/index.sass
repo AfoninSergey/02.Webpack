@@ -44,23 +44,23 @@ h1
     width: 200px
     height: 200px
     border: 2px solid gray
-    border-radius: 30px 
-    img
-      display: block
-      height: 60px
-      width: auto  
+    border-radius: 30px
+    &:hover
+      filter: blur(1px)
+    &:active
+      filter: none
   .sun
-    background: url("../assets/img/summer-bg.jpg") center/cover no-repeat #926e0a
-    &:hover
-      filter: blur(1px)
+    background: url("../assets/icons/sun.svg") no-repeat center 50% / 60px, url("../assets/img/summer-bg.jpg") center/cover no-repeat #926e0a,
+    &.pause
+      background-image: url("../assets/icons/pause.svg"), url("../assets/img/summer-bg.jpg")  
   .rain
-    background: url("../assets/img/rainy-bg.jpg") center/cover no-repeat #3a3577
-    &:hover
-      filter: blur(1px)
+    background: url("../assets/icons/cloud-rain.svg") no-repeat center 50% / 60px, url("../assets/img/rainy-bg.jpg") center/cover no-repeat #3a3577
+    &.pause
+      background-image: url("../assets/icons/pause.svg"), url("../assets/img/rainy-bg.jpg")  
   .snow
-    background: url("../assets/img/winter-bg.jpg") center/cover no-repeat #61727e
-    &:hover
-      filter: blur(1px)
+    background: url("../assets/icons/cloud-snow.svg") no-repeat center 50% / 60px, url("../assets/img/winter-bg.jpg") center/cover no-repeat #61727e
+    &.pause
+      background-image: url("../assets/icons/pause.svg"), url("../assets/img/winter-bg.jpg"),   
   .volume
     margin-top: 25px
     width: 150px
