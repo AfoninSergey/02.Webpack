@@ -1,0 +1,16 @@
+{
+  "name": "02.webpack-task_01",
+  "version": "1.0.0",
+  "description": "Задача №1 Курса Result Модуля №2 Webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "js",
+    "result"
+  ],
+  "author": "Afonin Sergey",
+  "license": "ISC"
+}
