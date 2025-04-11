@@ -8,5 +8,62 @@
 
 body
   font-family: 'Roboto', sans-serif
-  background: #926e0a url("../assets/img/rainy-bg.jpg")
+  height: 100vh
+  width: 100vw
+  min-height: 250px
+  min-width: 850px
+  backdrop-filter: blur(5px)
+  overflow: hidden
+  padding: 50px 100px
+  background:  url("../assets/img/summer-bg.jpg") center/cover no-repeat #926e0a
+
+.rainy
+  background: url("../assets/img/rainy-bg.jpg") center/cover no-repeat #3a3577
+
+.winter
+  background: url("../assets/img/winter-bg.jpg") center/cover no-repeat #61727e
+
+h1
+  font-size: 60px
+  font-weight: bold
+  text-align: center
+  color: #f0703a
+
+.player
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin: 25px auto 0
+  height: 250px
+  width: 680px
+  .buttons
+    width: 100%
+    display: flex
+    justify-content: space-between
+  button
+    width: 200px
+    height: 200px
+    border: 2px solid gray
+    border-radius: 30px 
+    img
+      display: block
+      height: 60px
+      width: auto  
+  .sun
+    background: url("../assets/img/summer-bg.jpg") center/cover no-repeat #926e0a
+    &:hover
+      filter: blur(1px)
+  .rain
+    background: url("../assets/img/rainy-bg.jpg") center/cover no-repeat #3a3577
+    &:hover
+      filter: blur(1px)
+  .snow
+    background: url("../assets/img/winter-bg.jpg") center/cover no-repeat #61727e
+    &:hover
+      filter: blur(1px)
+  .volume
+    margin-top: 25px
+    width: 150px
+    &:hover
+      cursor: pointer
 
