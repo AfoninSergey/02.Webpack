@@ -2,17 +2,20 @@ import './sass/index.sass';
 
 const buttons = document.querySelectorAll('button');
 const sounds = document.querySelectorAll('audio');
+const volume = document.querySelector('.volume');
 
 buttons.forEach((btn) => {
 	btn.addEventListener('click', ({ currentTarget }) => {
-		buttons.forEach(b => {if (b !== currentTarget) b.classList.remove('pause')})
+		buttons.forEach((b) => {
+			if (b !== currentTarget) b.classList.remove('pause');
+		});
 
 		document.body.className = '';
 
-		currentTarget.classList.toggle('pause')
+		currentTarget.classList.toggle('pause');
 
 		const buttonClassName = currentTarget.className;
-	
+
 		if (!buttonClassName.includes('sun')) {
 			document.body.classList.add(
 				`${buttonClassName.includes('rain') ? 'rainy' : 'winter'}`
@@ -21,7 +24,7 @@ buttons.forEach((btn) => {
 
 		sounds.forEach((sound) => {
 			sound.pause();
-		
+
 			if (buttonClassName.includes(sound.id)) {
 				sound.classList.toggle('play');
 				if (sound.classList.contains('play')) {
@@ -32,4 +35,8 @@ buttons.forEach((btn) => {
 			}
 		});
 	});
+});
+
+volume.addEventListener('input', () => {
+	sounds.forEach((sound) => (sound.volume = volume.value));
 });
