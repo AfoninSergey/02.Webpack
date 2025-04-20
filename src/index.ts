@@ -2,7 +2,7 @@ import './sass/index.sass';
 
 const buttons = document.querySelectorAll('button');
 const sounds = document.querySelectorAll('audio');
-const volume = document.querySelector('.volume');
+const volume = document.querySelector('.volume') as HTMLInputElement;
 
 buttons.forEach((btn) => {
 	btn.addEventListener('click', ({ currentTarget }) => {
@@ -12,9 +12,9 @@ buttons.forEach((btn) => {
 
 		document.body.className = '';
 
-		currentTarget.classList.toggle('pause');
+		(currentTarget as HTMLElement).classList.toggle('pause');
 
-		const buttonClassName = currentTarget.className;
+		const buttonClassName = (currentTarget as HTMLElement).className;
 
 		if (!buttonClassName.includes('sun')) {
 			document.body.classList.add(
@@ -38,5 +38,5 @@ buttons.forEach((btn) => {
 });
 
 volume.addEventListener('input', () => {
-	sounds.forEach((sound) => (sound.volume = volume.value));
+	sounds.forEach((sound) => (sound.volume = +volume.value));
 });

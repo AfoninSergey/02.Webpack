@@ -8,5 +8,12 @@
 		"jsx": "react",
 		"allowJs": true,
 		"moduleResolution": "node"
-	}
+	},
+	"exclude": [
+		"node_modules",
+		"dist",
+		"webpack.config.*.js",
+		"webpack.config.js",
+		"eslint.config.mjs"
+	]
 }
