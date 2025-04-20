@@ -1,0 +1,69 @@
+@use 'reset'
+
+@font-face
+  font-family: 'Roboto'  
+  src: url('../fonts/Roboto-Regular.ttf') format("truetype")
+  font-weight: normal
+  font-style: normal
+
+body
+  font-family: 'Roboto', sans-serif
+  height: 100vh
+  width: 100vw
+  min-height: 250px
+  min-width: 850px
+  backdrop-filter: blur(5px)
+  overflow: hidden
+  padding: 50px 100px
+  background:  url("../assets/img/summer-bg.jpg") center/cover no-repeat #926e0a
+
+.rainy
+  background: url("../assets/img/rainy-bg.jpg") center/cover no-repeat #3a3577
+
+.winter
+  background: url("../assets/img/winter-bg.jpg") center/cover no-repeat #61727e
+
+h1
+  font-size: 60px
+  font-weight: bold
+  text-align: center
+  color: #f0703a
+
+.player
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin: 25px auto 0
+  height: 250px
+  width: 680px
+  .buttons
+    width: 100%
+    display: flex
+    justify-content: space-between
+  button
+    width: 200px
+    height: 200px
+    border: 2px solid gray
+    border-radius: 30px
+    &:hover
+      filter: blur(1px)
+    &:active
+      filter: none
+  .sun
+    background: url("../assets/icons/sun.svg") no-repeat center 50% / 60px, url("../assets/img/summer-bg.jpg") center/cover no-repeat #926e0a,
+    &.pause
+      background-image: url("../assets/icons/pause.svg"), url("../assets/img/summer-bg.jpg")  
+  .rain
+    background: url("../assets/icons/cloud-rain.svg") no-repeat center 50% / 60px, url("../assets/img/rainy-bg.jpg") center/cover no-repeat #3a3577
+    &.pause
+      background-image: url("../assets/icons/pause.svg"), url("../assets/img/rainy-bg.jpg")  
+  .snow
+    background: url("../assets/icons/cloud-snow.svg") no-repeat center 50% / 60px, url("../assets/img/winter-bg.jpg") center/cover no-repeat #61727e
+    &.pause
+      background-image: url("../assets/icons/pause.svg"), url("../assets/img/winter-bg.jpg"),   
+  .volume
+    margin-top: 25px
+    width: 150px
+    &:hover
+      cursor: pointer
+
