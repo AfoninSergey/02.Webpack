@@ -3,15 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
-	entry: './index.js',
+	entry: './index.ts',
 	output: {
 		filename: '[name].[contenthash].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 		assetModuleFilename: 'assets/[name].[hash][ext][query]'
+	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.jsx', '.js']
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -57,7 +59,11 @@ module.exports = {
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource'
 			},
+			{
+				test: /\.[tj]sx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/
+			}
 		]
-	},
-	
+	}
 };
